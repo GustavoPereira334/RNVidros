@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RN Vidros soluções em vidros</title>
+    <!-- Link para o CSS de dep [...] -->
+    <link rel="stylesheet" href="/client/css/depoimentos.css">
+    <style>
+        /* Estilos básicos para os depoimentos */
+        #depoimentos-lista .depoimento {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-left: 4px solid #4CAF50;
+            background: #f9f9f9;
+        }
+        #depoimentos-lista blockquote {
+            margin: 0;
+            font-style: italic;
+        }
+        #depoimentos-lista .depoimentofooter {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="Logo">RN Vidros</a>
+        <ul id="NavMenu">
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="heroContent">
+            <h1>Transparência, qualidade e confiança em cada projeto!</h1>
+            <p>Soluções completas em vidros temperados, espelhos, boxes e envidraçamento para residências e comercias.</p>
+            <a href="#" class="btn-primary">Solicite um orçamento</a>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+        <div class="container">
+            <div class="sectionTitle">
+                <h2>Nossos Serviços</h2>
+                <p>Atendemos projetos residenciais, comerciais e corporativos com excelência.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="icon">🕚</div>
+                    <h3>Box para Banheiros</h3>
+                    <p>Boxes em vidro temperado 8mm com perfis em alumínio, PVC e acrílico. Modelos de canto, frontal e corredor.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🏢</div>
+                    <h3>Fachadas em Vidros</h3>
+                    <p>Envideçamento de fachadas comerciais com vidro laminado e temperado, garantindo segurança e elegância.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🪞</div>
+                    <h3>Espelhos Sob Medidas</h3>
+                    <p>Espelhos lapidados e bisotados para banheiros, academias, salões e decoração em geral.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🪟</div>
+                    <h3>Envidiramento de Sacadas</h3>
+                    <p>Sistema de fechamentos de sacadas com vidros de segurança, proporcionando conforto e proteção.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🛡️</div>
+                    <h3>Guarda-Corpo</h3>
+                    <p>Guarda-corpo em vidro temperado ou laminado com estrutura em aço inoxidável ou alumínio.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🚪</div>
+                    <h3>Janelas e Portas</h3>
+                    <p>Janelas e portas de vidro, de correr, maxim‑ar e basculante, sob medida para o seu projeto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Sobre RN Vidros soluções em vidros</h2>
+                    <p>Com anos de experiência no mercado, a RN Vidros se consolidou como referência em soluções de Vidracaria atendendo clientes residenciais e comerciais com qualidade, pontualidade e preços justos.</p>
+                    <p>Trabalhamos com os melhores materiais do mercado, garantindo segurança, durabilidade e acabamento impecável em cada projeto.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="number">400+</div>
+                        <div class="label">Projetos concluídos.</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">10+</div>
+                        <div class="label">Anos no mercado.</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">100%</div>
+                        <div class="label">Satisfação.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="aboutImage">🕒</div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+        <div class="container">
+            <div class="sectionTitle"><h2>O que nossos clientes dizem</h2></div>
+            <div id="depoimentos-lista"></div>
+        </div>
+    </section>
+
+    <script>
+    (async () => {
+      // === CONFIGURAÇÕES ===
+      const API_KEY = 'SUA_API_KEY_AQUI';            // ← substitua com sua chave
+      const PLACE_ID = 'SEU_PLACE_ID_AQUI';          // ← substitua com o Place ID
+      // =======================
+      const container = document.getElementById('depoimentos-lista');
+      if (!container) return;
+      const endpoint = `https://maps.googleapis.com/maps/api/place/details/json?
+        place_id=${PLACE_ID}
+        &key=${API_KEY}
+        &fields=reviews`;
+      try {
+        const resp = await fetch(endpoint);
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const data = await resp.json();
+        data.result.reviews.forEach(rev => {
+          const div = document.createElement('div');
+          div.className = 'depoimento';
+          div.innerHTML = `
+            <blockquote>
+              <p>${rev.text}</p>
+              <footer>— ${rev.author_name}
+                <small>(Nota: ${rev.rating}/5)</small></footer>
+              <time datetime="${rev.time}">${new Date(rev.time * 1000).toLocaleDateString('pt-BR')}</time>
+            </blockquote>`;
+          container.appendChild(div);
+        });
+      } catch (e) {
+        console.error('Erro ao carregar depoimentos do Google:', e);
+        container.textContent = 'Não foi possível carregar os depoimentos no momento.';
+      }
+    })();
+    </script>
+</body>
+</html>
