@@ -1,0 +1,58 @@
+/* assets/src/css/depoimentos.css */
+#depoimentos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+#depoimentos-lista .depoimento {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-top: 4px solid #4CAF50;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#depoimentos-lista .depoimento:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+#depoimentos-lista blockquote {
+  margin: 0;
+}
+
+.depoimento-estrelas {
+  color: #F5A623;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 2px;
+}
+
+#depoimentos-lista blockquote p {
+  font-style: italic;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+#depoimentos-lista blockquote footer {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+#depoimentos-lista blockquote footer small {
+  font-weight: 400;
+  color: #888;
+  margin-left: 4px;
+}
+
+#depoimentos-lista blockquote time {
+  display: block;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+}

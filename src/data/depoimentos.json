@@ -1,0 +1,26 @@
+[
+    {
+        "author_name": "Cliente google",
+        "text": "Ótimo serviço atendeu todas minhas expectativas, recomendo Ótimo Profissional.",
+        "rating": "5",
+        "date": "2024-12-01"
+    },
+    {
+        "author_name": "Cliente Google",
+        "text": "Trabalho realizado pelo Rafael na nossa empresa ficou show! Já fizemos 2 serviços com eles e sempre maravilha!",
+        "rating": "5",
+        "date": "2024-11-15"
+    },
+    {
+        "author_name": "Cliente Google",
+        "text": "Super indico... fez porta e janelas para mim e ficou muito bom o serviço",
+        "rating": "5",
+        "date": "2024-10-20"
+    },
+    {
+        "author_name": "Cliente Google",
+        "text": "O serviço muito bem executado, atendeu as expectativas! A melhorar, em relação de prazo de instalação, deixo como sugestão informar um prazo sempre maior, exemplo, informar 30 dias e surpreender os clientes entregando e instalando antes.",
+        "rating": "5",
+        "date": "2025-04-23"
+    }
+]
