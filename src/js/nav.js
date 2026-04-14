@@ -1,5 +1,6 @@
-// assets/src/js/nav.js
+// src/js/nav.js
 document.addEventListener('DOMContentLoaded', () => {
+  // Scroll suave
   const menuLinks = document.querySelectorAll('#NavMenu a');
   menuLinks.forEach(link => {
     link.addEventListener('click', e => {
@@ -12,6 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
         menuLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
       }
+      // Fecha o menu ao clicar num link
+      navMenu.classList.remove('open');
     });
+  });
+
+  // Menu hamburger
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('NavMenu');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
   });
 });

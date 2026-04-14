@@ -1,0 +1,67 @@
+
+/* MENU HAMBURGER */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #2e7d32;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        gap: 1rem;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+}
+
+/* ================================
+   MEDIA QUERIES - MOBILE (768px)
+================================ */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .whatsapp-float img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* ================================
+   MEDIA QUERIES - MOBILE PEQUENO (480px)
+================================ */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        width: 46px;
+        height: 46px;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .whatsapp-float img {
+        width: 26px;
+        height: 26px;
+    }
+}

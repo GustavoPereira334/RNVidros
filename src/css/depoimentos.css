@@ -56,3 +56,42 @@
   color: #aaa;
   margin-top: 0.5rem;
 }
+
+/* ================================
+   MEDIA QUERIES - TABLET (1024px)
+================================ */
+@media (max-width: 1024px) {
+  #depoimentos-lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================================
+   MEDIA QUERIES - MOBILE (768px)
+================================ */
+@media (max-width: 768px) {
+  #depoimentos-lista {
+    grid-template-columns: 1fr;
+  }
+
+  #depoimentos-lista .depoimento {
+    padding: 1.2rem;
+  }
+}
+
+/* ================================
+   MEDIA QUERIES - MOBILE PEQUENO (480px)
+================================ */
+@media (max-width: 480px) {
+  .depoimento-estrelas {
+    font-size: 1rem;
+  }
+
+  #depoimentos-lista blockquote p {
+    font-size: 0.9rem;
+  }
+
+  #depoimentos-lista blockquote footer {
+    font-size: 0.85rem;
+  }
+}

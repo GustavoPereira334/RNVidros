@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="src/css/depoimentos.css">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/float-Whatsapp.css">
+    <link rel="stylesheet" href="src/css/MenuHamburgue.css">
+    <link rel="stylesheet" href="src/css/Orcamento.css">
 </head>
 
 ds]]<!-- Botao flutuante do whatsapp -->
@@ -21,11 +23,12 @@ ds]]<!-- Botao flutuante do whatsapp -->
     <nav>
         <a href="#" class="Logo">RN Vidros</a>
         <ul id="NavMenu">
-            <li><a href="#">Serviços</a></li>
+            <li><a href="#servicos">Serviços</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#depoimentos">Depoimentos</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
+        <button class="menu-toggle" id="menuToggle">☰</button>
     </nav>
 
     <!-- HERO -->
@@ -124,8 +127,75 @@ ds]]<!-- Botao flutuante do whatsapp -->
         </div>
     </section>
 
+    <!-- Contato -->
+    <section id="contato">
+        <div class="container">
+            <div class="sectionTitle">
+                <h2>Entre em contato</h2>
+                <p>Solicite um orçamento ou tire suas dúvidas!</p>
+            </div>
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <p>📍 R. Luís Saladin, 335 — Jaraguá, São Paulo - SP</p>
+                    <p>📞 <a href="tel:+5511967400213">(11) 96740-0213</a></p>
+                    <p>⏰ Segunda a Sexta: 08:00 às 18:00</p>
+                    <div class="redes-sociais">
+                        <a href="https://www.instagram.com/rnvidros_solucoes_em_vidros/" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/Rvidros/?locale=pt_BR" target="_blank">Facebook</a>
+                        <a href="https://www.youtube.com/@rnvidros4918" target="_blank">YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORÇAMENTO -->
+    <section id="orcamento">
+        <div class="container">
+            <div class="sectionTitle">
+                <h2>Solicite um Orçamento</h2>
+                <p>Preencha o formulário e entraremos em contato em breve!</p>
+            </div>
+            <form class="orcamento-form" id="orcamentoForm">
+                <div class="form-group">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone / WhatsApp</label>
+                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+                </div>
+                <div class="form-group">
+                    <label for="servico">Serviço desejado</label>
+                    <select id="servico" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="box">Box para Banheiros</option>
+                        <option value="fachada">Fachadas em Vidro</option>
+                        <option value="espelho">Espelhos Sob Medida</option>
+                        <option value="sacada">Envidraçamento de Sacadas</option>
+                        <option value="guarda-corpo">Guarda-Corpo</option>
+                        <option value="janelas">Janelas e Portas</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" rows="4" placeholder="Descreva seu projeto..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Orçamento</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 RN Vidros Soluções em Vidros · Todos os direitos reservados</p>
+    </footer>
+
     <script src="src/js/nav.js"></script>
     <script src="src/js/depoimentos.js"></script>
+    <script src="src/js/orcamento.js"></script>
+
 
 </body>
 
