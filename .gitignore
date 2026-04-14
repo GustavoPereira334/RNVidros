@@ -21,3 +21,8 @@ npm-debug.log*
 # Build
 dist/
 build/
+
+# XAMPP / PHP
+*.sql
+*.bak
+config.php
